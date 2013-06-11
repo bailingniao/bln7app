@@ -1,0 +1,101 @@
+ul,li,dl,dd,dt,ol{margin:0px;padding:0px;list-style:none;}
+body{margin:0px;padding:0px;width:100%;height:100%;background:#333;overflow:hidden;}
+.appPage{float:left; min-height:100%;background:#FFF;position:relative;}
+.cl{clear:both;}
+#loadWrap{position:absolute;}
+#loadWrap .imgs{width:100%;height:100%; max-width:256px; max-height:256px;position:absolute;left:50%;top:50%;}
+#loadWrap .imgs img{margin:-50% 0 0 -50%;width:100%;height:100%; max-width:256px; max-height:256px;}
+#loadWrap .mloads{width:59px;height:11px;position:absolute;left:50%; bottom:20%;margin-left:-24px; background:url(../img/loading.gif);}
+#appLabs{padding-left:50px;}
+.pageCon{position:relative;}
+.AppSideBtn{position:fixed;left:5px;top:5px;}
+.AppSideBtn i{margin:7px 0px;}
+
+
+.tile{width:150px;height:150px;float:left;position:relative;margin:5px;padding:0px;}
+.tile>div{width:100%;height:100%;position:relative;}
+.tile .bag{display:block;position:absolute;right:5px;bottom:4px;color:#FFF;font-size:12px;}
+.tile .name{display:block;position:absolute;left:5px;bottom:4px;font-size:12px;color:#FFF; text-shadow:1px 1px rgba(0,0,0,0.3);}
+.tile .full{width:100%;height:100%;}
+.two-wide{width:310px;}
+.half-tile{width:70px;height:70px;}
+.one-tile{width:160px;height:160px;float:left;}
+.tile.groupb>div{width:33.3333%;height:33.3333%;float:left;}
+
+
+
+
+/*主题颜色*/
+.amber.tile>div,.amber .tile>div,.amber.accent{background-color:#F1A30B;}
+.blue.tile>div,.blue .tile>div,.blue.accent{background-color:#1BA1E2;}
+.brown.tile>div,.brown .tile>div,.brown.accent{background-color:#A05000;}
+.cobalt.tile>div,.cobalt .tile>div,.cobalt.accent{background-color:#0050EF;}
+.crimson.tile>div,.crimson .tile>div,.crimson.accent{background-color:#A20025;}
+.cyan.tile>div,.cyan .tile>div,.cyan.accent{background-color:#1BA0E1;}
+.magenta.tile>div,.magenta .tile>div,.magenta.accent{background-color:#D80073;}
+.lime.tile>div,.lime .tile>div,.lime.accent{background-color:#A2C139;}
+.indigo.tile>div,.indigo .tile>div,.indigo.accent{background-color:#6A00FF;}
+.green.tile>div,.green .tile>div,.green.accent{background-color:#339933;}
+.emerald.tile>div,.emerald .tile>div,.emerald.accent{background-color:#008A00;}
+.mango.tile>div,.mango .tile>div,.mango.accent{background-color:#F09609;}
+.mauve.tile>div,.mauve .tile>div,.mauve.accent{background-color:#765F89;}
+.olive.tile>div,.olive .tile>div,.olive.accent{background-color:#6D8764;}
+.orange.tile>div,.orange .tile>div,.orange.accent{background-color:#FA6801;}
+.pink.tile>div,.pink .tile>div,.pink.accent{background-color:#E671B8;}
+.red.tile>div,.red .tile>div,.red.accent{background-color:#E51400;}
+.sienna.tile>div,.sienna .tile>div,.sienna.accent{background-color:#7B3A3E;}
+.steel.tile>div,.steel .tile>div,.steel.accent{background-color:#657688;}
+.teal.tile>div,.teal .tile>div,.teal.accent{background-color:#00ABA9;}
+.violet.tile>div,.violet .tile>div,.violet.accent{background-color:#A200FF;}
+.yellow.tile>div,.yellow .tile>div,.yellow.accent{background-color:#D8C101;}
+
+/* 大屏幕 */
+@media (min-width: 1200px) {
+
+}
+ 
+/* 平板电脑和小屏电脑之间的分辨率 */
+@media (min-width: 768px) and (max-width: 979px) {
+	
+}
+ 
+/* 横向放置的手机和竖向放置的平板之间的分辨率 */
+@media (max-width: 767px) {}
+ 
+/* 横向放置的手机及分辨率更小的设备 */
+@media (max-width: 480px) {}
+
+[class|="icon"]{display:block;background-image:url(../img/icon-block.png); width: 38px; height: 38px;border-radius:38px;}
+.small-icon [class|="icon"],[class|="icon"].small{transform:scale(0.8);-webkit-transform:scale(0.8);}
+.icon-add{ background-position: 0 0; } 
+.icon-back{ background-position: 0 -76px;} 
+.icon-camera{ background-position: 0 -152px;} 
+.icon-cancel{ background-position: 0 -228px;} 
+.icon-check{ background-position: 0 -304px;} 
+.icon-delete{ background-position: 0 -380px;} 
+.icon-download{ background-position: 0 -456px;} 
+.icon-edit{ background-position: 0 -532px;} 
+.icon-favsaddto{ background-position: 0 -608px;} 
+.icon-favs{ background-position: 0 -684px;} 
+.icon-ff{ background-position: 0 -760px;} 
+.icon-flag{ background-position: 0 -836px;} 
+.icon-folder{ background-position: 0 -912px;} 
+.icon-heart{ background-position: 0 -988px;} 
+.icon-i{ background-position: 0 -1064px;} 
+.icon-mail{ background-position: 0 -1140px;} 
+.icon-minus{ background-position: 0 -1216px;} 
+.icon-next{ background-position: 0 -1292px;} 
+.icon-overflowdots{ background-position: 0 -1368px;} 
+.icon-parent{ background-position: 0 -1444px;} 
+.icon-pause{ background-position: 0 -1520px;} 
+.icon-phone{ background-position: 0 -1596px;} 
+.icon-play{ background-position: 0 -1672px;} 
+.icon-questionmark{ background-position: 0 -1748px;} 
+.icon-refresh{ background-position: 0 -1824px;} 
+.icon-rew{ background-position: 0 -1900px;} 
+.icon-save{ background-position: -76px 0;} 
+.icon-search{ background-position: -76px -76px;} 
+.icon-settings{ background-position: -76px -152px;} 
+.icon-share{ background-position: -76px -228px;} 
+.icon-upload{ background-position: -76px -304px;} 
+.icon-video{ background-position: -76px -380px;} 
