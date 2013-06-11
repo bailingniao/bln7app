@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+<title>百灵鸟算命</title>
+<link rel="stylesheet" type="text/css" href="css/bln7.css">
+<phonegap></phonegap>
+<script src="js/jquery2.0.2.js"></script>
+<script src="js/Scroll/iscroll.js"></script>
+<script src="js/quo.js"></script>
+<script src="js/bln7.js"></script>
+<style title="mcss">
+
+/*.tile{width:150px;height:150px;margin:5px;padding:0px;background:#09F;float:left;}*/
+.zoom_s{transform:scale(0.95);-webkit-transform:scale(0.95);transition: all 0.5s ease;}
+.zoom_n{transform:scale(1);-webkit-transform:scale(1);transition: all 0.5s ease;}
+.zoom_b{transform:scale(1.1);-webkit-transform:scale(1.1);transition: all 0.5s ease;}
+
+.line_3d{
+	-webkit-animation-name:y-ain;
+	-webkit-animation-duration:1s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-iteration-count:infinite;
+}
+       
+@-webkit-keyframes y-ain{
+    0%{-webkit-transform:rotateY(0deg);}
+    50%{-webkit-transform:rotateY(180deg);}
+    100%{-webkit-transform:rotateY(360deg);}
+}
+
+</style>
+<script>
+function imgsize(URL){var ni = new Image(); ni.onload = function(){return [ni.width,ni.height];} ;ni.src = URL;}
+$(document).ready(function() {
+	var env = $$.environment();
+	var scWidth=env.screen.width;
+	var scHeight=env.screen.height;
+	var pgElmArr=[$("#appMerto"),$("#appList")];
+	$("#wrapper").css({width:scWidth,overflow:"hidden"});
+	$("#wrapper > #scroller").css({width:scWidth*$(".appPage").size()});
+	$(".appPage").css({width:scWidth,height:scHeight});
+	$("#wrapper").data("curid","0");
+	var AppWrap = new iScroll('wrapper',{snap:$(".appPage"),bounce:false,vScroll:false,hScrollbar:false,lockDirection:true});
+	var MertoScroll= new iScroll("appMerto",{snap:false,bounce:true,vScrollbar:false});
+	var ListScroll= new iScroll("appList",{snap:false,bounce:true});
+	
+	$(".tile,[class|='tile']").click(function(){
+		var posi=$(this).offset();
+		var size=[$(this).width(),$(this).height()];
+		var imgSrc=$(this).find("img:eq(0)").attr("src");
+		imgsize(imgSrc)
+		var bgColor=$(this).children("div").css("background-color");
+		$("body").append('<div id="loadWrap"><div class="imgs"><img src="'+imgSrc+'" /></div></div>');
+		$("#loadWrap").css({backgroundColor:bgColor,width:size[0],height:size[1],left:posi.left,top:posi.top})
+		.animate({width:scWidth,height:scHeight,left:0,top:0},500,function(){
+			$("#loadWrap").removeClass("line_3d");
+			$(this).append('<div class="mloads"></div>');
+		}).click(function(){
+			$(this).animate({width:size[0],height:size[1],left:posi.left,top:posi.top},500,function(){$(this).remove();});
+		})
+	})
+	$$(".tile,[class|='tile']").hold(function(){
+		//alert("dd");
+	});
+	
+	
+	//$("[title='mcss']").append(".tile{height:"+(wit*0.31)+"px}");
+//	/*$$(".tile").each(function(index, element) {
+//		$$(this).style("height",$$(this).style("width"));
+//	});*/
+//	$(".tile").on("touchstart",function(){
+//		//$$(this).style({transform:"scale(0.95)",transition:"all 0.5s ease"})
+//		$(this).addClass("zoom_s");
+//	}).on("touchend",function(){
+//		$(this).removeClass("zoom_s");
+//	}).on("click",function(){
+//		$(this).addClass("line_3d").css("position","absolute").animate({left:0,top:0,width:"100%",height:"100%"},1000,function(){$(this).removeClass("line_3d");})
+//	});
+
+});
+</script>
+</head>
+
+<body class="brown">
+<div id="wrapper">
+	<div id="scroller">
+		<div id="appMerto" class="appPage">
+			<div class="pageCon">
+				<div class="tile emerald">
+					<div><img src="img/photo/user.png" class="full"><span class="name">我的百灵鸟</span><span class="bag">登录</span></div>
+				</div>
+				<div class="tile"><div><img src="img/photo/msg2.png" class="full"><span class="name">信息</span><span class="bag">2</span></div></div>
+				<div class="tile"><div><img src="img/photo/Games.png" class="full"><span class="name">游戏</span><span class="bag">2</span></div></div>
+				<div class="tile crimson"><div><img src="img/photo/iCal.png" class="full"><span class="name">百灵鸟黄历</span><span class="bag">2</span></div></div>
+				<div class="tile"><div><img src="img/photo/ie.png" class="full"><span class="name">浏览器</span><span class="bag">2</span></div></div>
+				<div class="tile"><div><img src="img/photo/mark.png" class="full"><span class="name">应用宝库</span><span class="bag">2</span></div></div>
+				<div class="tile"><div><img src="img/photo/rss.png" class="full"><span class="name">最新命理资讯</span><span class="bag">2</span></div></div>
+				<div class="tile"><div><img src="img/photo/set.png" class="full"><span class="name">系统设置</span></div></div>
+				<div class="tile"><div><img src="img/photo/Cart3.png" class="full"><span class="name">百灵鸟商城</span></div></div>
+				<div class="tile"><div class="full"></div></div>
+				<div class="one-tile">
+					<div class="tile half-tile"><div class="full"></div></div>
+					<div class="tile half-tile"><div class="full"></div></div>
+					<div class="tile half-tile"><div class="full"></div></div>
+					<div class="tile half-tile"><div class="full"></div></div>
+				</div>
+				<div class="tile groupb">
+					<div>aa</div>
+					<div>bb</div>
+					<div style="background:#F60">cc</div>
+					<div>aa</div>
+					<div style="background:#F33">bb</div>
+					<div>cc</div>
+					<div style="background:#399">aa</div>
+					<div>bb</div>
+					<div style="background:#390">cc</div>
+				</div>
+				<div class="tile"><div class="full"></div></div>
+				<div class="tile"><div class="full"></div></div>
+				<div class="tile"><div class="full"></div></div>
+				<div class="tile"><div class="full"></div></div>
+				<div class="tile"><div class="full"></div></div>
+				<div class="tile"><div class="full"></div></div>
+				<div class="tile"><div class="full"></div></div>
+				<div class="cl"></div>
+			</div>
+		</div>
+		<div id="appList" class="appPage">
+			<div class="pageCon">
+				<ul id="appLabs">
+					<li> 完全消除myscroll及其占用的内存空间</li>
+					<li>sdfsdfsdf</li>
+					<li>sdfsdfsdf</li>
+					<li>sdfsdfsdf</li>
+					<li>sdfsdfsdf</li>
+					<li>sdfsdfsdf</li>
+					<li>sdfsdfsdf</li>
+					<li>sdfsdfsdf</li>
+				</ul>
+			</div>
+			<div class="AppSideBtn irud-all">
+				<i class="icon-back"></i>
+				<i class="icon-settings"></i>
+				<i class="icon-refresh"></i>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--<div class="wrap">
+	<div class="tiles">
+
+    <div class="live-tile">
+        <div style="background-color:Red;">test 1</div>
+		<div style="background-color:Orange;">test back</div>
+    </div>
+    <div class="live-tile" data-mode="flip">
+        <div style="background-color:green;">test 2</div>
+        <div style="background-color:red;">test 2 - back</div>
+    </div>
+    <div class="list-tile">
+        <ul class="flip-list fourTiles" data-mode="flip-list">
+            <li><div style="background-color:Blue;"></div><div style="background-color:Orange;"></div></li>
+            <li><div style="background-color:Orange;"></div><div style="background-color:Blue;"></div></li>
+            <li><div style="background-color:Green;"></div><div style="background-color:Red;"></div></li>
+            <li><div style="background-color:Red;"></div><div style="background-color:Green;"></div></li>
+        </ul>
+    </div>
+</div>
+</div>-->
+</body>
+</html>
